@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KODAK Фотосалон — Усть-Каменогорск</title>
+  <meta name="description" content="Фотосалон KODAK: печать, документы, реставрация, оцифровка кассет. Адрес: г. Усть-Каменогорск, Кабанбай батыра 99. Ежедневно 8:30–18:30." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="logo" aria-label="KODAK Фотосалон">
+        <span class="logo__mark neon-pulse">K</span><span class="logo__text">KODAK</span>
+      </a>
+      <nav class="nav" aria-label="Главное меню">
+        <button class="nav__toggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
+        <ul class="nav__list">
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#prices">Цены</a></li>
+          <li><a href="#gallery">Галерея</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </nav>
+      <a class="cta cta--header" href="#contact">Контакты</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-label="Главный баннер">
+      <div class="hero__bg">
+        <div class="hero__gradient"></div>
+        <div class="hero__pattern"></div>
+        <div class="hero__neon-lines"></div>
+      </div>
+      <div class="container hero__content">
+        <h1 class="hero__title neon-text">KODAK — фотографии, которые живут</h1>
+        <p class="hero__subtitle">Печать, документы, реставрация и оцифровка кассет — быстро, качественно и красиво.</p>
+        <div class="hero__actions">
+          <a class="cta" href="#services">Смотреть услуги</a>
+          <a class="cta cta--ghost" href="#contact">Адрес: Кабанбай батыра 99</a>
+        </div>
+        <div class="hero__tags">
+          <span class="chip">Документ‑фото</span>
+          <span class="chip">Печать A4</span>
+          <span class="chip">Реставрация</span>
+          <span class="chip">Оцифровка кассет</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section section--reveal">
+      <div class="container">
+        <h2 class="section__title">Услуги</h2>
+        <div class="grid services__grid">
+          <article class="card card--hover glow">
+            <div class="card__icon">📄</div>
+            <h3 class="card__title">Фото на документы 3×4</h3>
+            <p class="card__text">Стандарт 3×4: без ретуши — 4 шт, с ретушью — профессионально и быстро.</p>
+            <div class="card__actions">
+              <a class="cta cta--whatsapp" data-wa="Здравствуйте, я хочу сделать фото 3×4">Написать в WhatsApp</a>
+            </div>
+          </article>
+          <article class="card card--hover glow">
+            <div class="card__icon">🖨️</div>
+            <h3 class="card__title">Печать A4</h3>
+            <p class="card__text">Чёрно‑белая печать — чётко, цветная — ярко. Бумага KODAK.</p>
+            <div class="card__actions">
+              <a class="cta cta--whatsapp" data-wa="Здравствуйте! Хочу распечатать A4 (уточните: ч/б или цвет)">Написать в WhatsApp</a>
+            </div>
+          </article>
+          <article class="card card--hover glow">
+            <div class="card__icon">🛠️</div>
+            <h3 class="card__title">Реставрация фото</h3>
+            <p class="card__text">Убираем дефекты, восстанавливаем цвет, бережно работаем со старыми снимками.</p>
+            <div class="card__actions">
+              <a class="cta cta--whatsapp" data-wa="Здравствуйте! Нужна реставрация фотографии">Написать в WhatsApp</a>
+            </div>
+          </article>
+          <article class="card card--hover glow">
+            <div class="card__icon">📼</div>
+            <h3 class="card__title">Оцифровка кассет</h3>
+            <p class="card__text">Перенесём ваш архив на современный носитель: USB/облако, с базовой чисткой звука.</p>
+            <div class="card__actions">
+              <a class="cta cta--whatsapp" data-wa="Здравствуйте! Хочу оцифровать кассеты">Написать в WhatsApp</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICES -->
+    <section id="prices" class="section section--alt section--reveal">
+      <div class="container">
+        <h2 class="section__title">Цены</h2>
+        <div class="grid prices__grid">
+          <div class="price glow">
+            <h3 class="price__title">Печать A4 (ч/б)</h3>
+            <p class="price__desc">Чёткая чёрно‑белая печать на качественной бумаге</p>
+            <div class="price__value">40 ₸</div>
+          </div>
+          <div class="price glow">
+            <h3 class="price__title">Печать A4 (цвет)</h3>
+            <p class="price__desc">Яркая цветная печать с точной цветопередачей</p>
+            <div class="price__value">80 ₸</div>
+          </div>
+          <div class="price glow">
+            <h3 class="price__title">Фото 3×4 без ретуши</h3>
+            <p class="price__desc">4 штуки, стандарт для документов</p>
+            <div class="price__value">900 ₸</div>
+          </div>
+          <div class="price glow">
+            <h3 class="price__title">Фото 3×4 с ретушью</h3>
+            <p class="price__desc">Аккуратная ретушь и коррекция</p>
+            <div class="price__value">от 900 до 1500 ₸</div>
+          </div>
+          <div class="price glow">
+            <h3 class="price__title">Реставрация фото</h3>
+            <p class="price__desc">Скан, восстановление, обработка</p>
+            <div class="price__value">индивидуально</div>
+          </div>
+          <div class="price glow">
+            <h3 class="price__title">Оцифровка кассет</h3>
+            <p class="price__desc">Перенос на USB/облако</p>
+            <div class="price__value">индивидуально</div>
+          </div>
+        </div>
+        <p class="note">Цены ориентировочные — уточняйте по WhatsApp. При большом объёме — скидки.</p>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="section section--reveal">
+      <div class="container">
+        <h2 class="section__title">Галерея</h2>
+        <div class="grid gallery__grid">
+          <figure class="gallery__item">
+            <img src="https://images.unsplash.com/photo-1519682577862-22b62b24e993?q=80&w=900" alt="Студийный портрет в стиле KODAK" />
+          </figure>
+          <figure class="gallery__item">
+            <img src="https://images.unsplash.com/photo-1531384441138-2736e62e0916?q=80&w=900" alt="Реставрация старых снимков" />
+          </figure>
+          <figure class="gallery__item">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=900" alt="Печать фотографий высокого качества" />
+          </figure>
+          <figure class="gallery__item">
+            <img src="https://images.unsplash.com/photo-1547082299-de196ea013d6?q=80&w=900" alt="Печать крупных форматов" />
+          </figure>
+          <figure class="gallery__item">
+            <img src="https://images.unsplash.com/photo-1520974698377-1bfe203eb7b5?q=80&w=900" alt="Семейная съёмка" />
+          </figure>
+          <figure class="gallery__item">
+            <img src="https://images.unsplash.com/photo-1511936609330-02ac7f445303?q=80&w=900" alt="Документ‑фото по стандарту" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section--reveal">
+      <div class="container contact__wrap">
+        <div class="contact__info glow">
+          <h2 class="section__title">Контакты</h2>
+          <ul class="contact__list">
+            <li><strong>Адрес:</strong> г. Усть‑Каменогорск, Кабанбай батыра 99</li>
+            <li><strong>График работы:</strong> ежедневно, без выходных и обеда, 8:30–18:30</li>
+            <li><strong>Телефон:</strong> <a href="tel:+77769699993">+7 776 969 9993</a></li>
+            <li><strong>WhatsApp:</strong> <a class="wa" href="#" data-wa="Здравствуйте! Хочу уточнить услуги и цены.">Написать</a></li>
+          </ul>
+          <div class="contact__quick">
+            <span class="chip">Быстрая связь:</span>
+            <a class="chip chip--cta wa" href="#" data-wa="Здравствуйте! Хочу сделать фото 3×4">Фото 3×4</a>
+            <a class="chip chip--cta wa" href="#" data-wa="Здравствуйте! Нужна печать A4: ч/б или цвет">Печать A4</a>
+            <a class="chip chip--cta wa" href="#" data-wa="Здравствуйте! Нужна реставрация фото">Реставрация</a>
+            <a class="chip chip--cta wa" href="#" data-wa="Здравствуйте! Нужна оцифровка кассет">Оцифровка кассет</a>
+          </div>
+        </div>
+        <div class="contact__map" role="figure" aria-label="Карта расположения">
+          <iframe
+            title="Кабанбай батыра 99 — карта"
+            src="https://www.google.com/maps?q=Кабанбай%20батыра%2099,%20Усть-Каменогорск&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="logo__mark neon-pulse">K</span><span class="logo__text">KODAK</span>
+      </div>
+      <p class="footer__text">© KODAK Фотосалон, г. Усть‑Каменогорск. Кабанбай батыра 99. Ежедневно 8:30–18:30. Тел.: +7 776 969 9993.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
