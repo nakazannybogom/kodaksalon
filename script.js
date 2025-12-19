@@ -1,9 +1,29 @@
-// WhatsApp number (digits only)
-const WA_NUMBER = '77769699993';
+// Настройки
+const WA_NUMBER = '77769699993'; // номер WhatsApp без +
 
-// Mobile nav toggle (via class)
+/* Тема: загрузка из localStorage и переключение */
+const themeBtn = document.getElementById('themeToggle');
+const body = document.body;
+const savedTheme = localStorage.getItem('theme');
+
+if (savedTheme === 'light') {
+  body.classList.remove('theme-dark');
+  themeBtn.textContent = '☀️';
+} else {
+  body.classList.add('theme-dark');
+  themeBtn.textContent = '🌙';
+}
+
+themeBtn.addEventListener('click', () => {
+  const isDark = body.classList.toggle('theme-dark');
+  themeBtn.textContent = isDark ? '🌙' : '☀️';
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
+
+/* Мобильное меню */
 const toggle = document.querySelector('.nav__toggle');
 const navList = document.querySelector('.nav__list');
+
 if (toggle && navList) {
   function closeNav() {
     navList.style.display = 'none';
@@ -17,13 +37,9 @@ if (toggle && navList) {
     const opened = navList.style.display === 'flex';
     opened ? closeNav() : openNav();
   });
-  // Close on outside click
   document.addEventListener('click', (e) => {
-    if (!navList.contains(e.target) && !toggle.contains(e.target)) {
-      closeNav();
-    }
+    if (!navList.contains(e.target) && !toggle.contains(e.target)) closeNav();
   });
-  // Reset on resize
   const mq = window.matchMedia('(min-width: 901px)');
   mq.addEventListener('change', (ev) => {
     if (ev.matches) {
@@ -35,7 +51,7 @@ if (toggle && navList) {
   });
 }
 
-// Reveal on scroll
+/* Появление секций при скролле */
 const revealSections = document.querySelectorAll('.section--reveal');
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => {
@@ -47,7 +63,7 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 revealSections.forEach(s => io.observe(s));
 
-// Smooth scroll for anchor links
+/* Плавный скролл для якорей */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', (e) => {
     const id = a.getAttribute('href').substring(1);
@@ -59,14 +75,13 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// WhatsApp deep link
+/* WhatsApp: автотекст и переход */
 function openWhatsAppWith(text) {
   const msg = encodeURIComponent(text);
   const url = `https://wa.me/${WA_NUMBER}?text=${msg}`;
   window.open(url, '_blank', 'noopener,noreferrer');
 }
 
-// Bind WhatsApp buttons
 document.querySelectorAll('.wa, .cta--whatsapp, .chip--cta, .cta--wa-header').forEach(el => {
   el.addEventListener('click', (e) => {
     e.preventDefault();
