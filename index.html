@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KODAK Фотосалон — Усть-Каменогорск</title>
-  <meta name="description" content="Фотосалон KODAK: печать, документы, реставрация, оцифровка кассет. Адрес: г. Усть-Каменогорск, Кабанбай батыра 99. Ежедневно 8:30–18:30." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 
-  <header class="header">
+
+
+  <!-- Header -->
+  <header class="header" role="banner">
     <div class="container header__inner">
       <a href="#" class="logo" aria-label="KODAK Фотосалон">
-        <span class="logo__mark neon-pulse">K</span><span class="logo__text">KODAK</span>
+        <span class="logo__mark">K</span><span class="logo__text">KODAK</span>
       </a>
       <nav class="nav" aria-label="Главное меню">
         <button class="nav__toggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
@@ -25,143 +19,249 @@
           <li><a href="#contact">Контакты</a></li>
         </ul>
       </nav>
-      <a class="cta cta--header" href="#contact">Контакты</a>
+      <div class="header__actions">
+        <button id="themeToggle" class="theme-btn" aria-label="Сменить тему" title="Сменить тему">🌙</button>
+        <a class="cta cta--wa-header wa" href="#" data-wa="Здравствуйте! Хочу сделать фото 3×4.">Фото 3×4</a>
+      </div>
     </div>
   </header>
 
   <main>
-    <!-- HERO -->
+    <!-- Hero -->
     <section class="hero" aria-label="Главный баннер">
-      <div class="hero__bg">
+      <div class="hero__bg" aria-hidden="true">
         <div class="hero__gradient"></div>
         <div class="hero__pattern"></div>
         <div class="hero__neon-lines"></div>
       </div>
       <div class="container hero__content">
-        <h1 class="hero__title neon-text">KODAK — фотографии, которые живут</h1>
-        <p class="hero__subtitle">Печать, документы, реставрация и оцифровка кассет — быстро, качественно и красиво.</p>
+        <h1 class="hero__title">KODAK — фотографии, которые живут</h1>
+        <p class="hero__subtitle">Печать A4/A3, фото 3×4/3.5×4.5/9×12, реставрация и окрашивание, оцифровка кассет и плёнки, дизайн и IT‑услуги — быстро, качественно и красиво.</p>
         <div class="hero__actions">
           <a class="cta" href="#services">Смотреть услуги</a>
           <a class="cta cta--ghost" href="#contact">Адрес: Кабанбай батыра 99</a>
         </div>
         <div class="hero__tags">
-          <span class="chip">Документ‑фото</span>
-          <span class="chip">Печать A4</span>
-          <span class="chip">Реставрация</span>
+          <span class="chip">Фото 3×4</span>
+          <span class="chip">Печать A4/A3</span>
+          <span class="chip">Реставрация и окрашивание</span>
           <span class="chip">Оцифровка кассет</span>
+          <span class="chip">Оцифровка плёнки</span>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
+    <!-- Services -->
     <section id="services" class="section section--reveal">
       <div class="container">
         <h2 class="section__title">Услуги</h2>
+
         <div class="grid services__grid">
-          <article class="card card--hover glow">
-            <div class="card__icon">📄</div>
-            <h3 class="card__title">Фото на документы 3×4</h3>
-            <p class="card__text">Стандарт 3×4: без ретуши — 4 шт, с ретушью — профессионально и быстро.</p>
-            <div class="card__actions">
-              <a class="cta cta--whatsapp" data-wa="Здравствуйте, я хочу сделать фото 3×4">Написать в WhatsApp</a>
-            </div>
-          </article>
-          <article class="card card--hover glow">
+          <article class="card glow">
             <div class="card__icon">🖨️</div>
-            <h3 class="card__title">Печать A4</h3>
-            <p class="card__text">Чёрно‑белая печать — чётко, цветная — ярко. Бумага KODAK.</p>
+            <h3 class="card__title">Распечатка A4</h3>
+            <p class="card__text">Ч/б — 40 ₸, цветная — 80 ₸</p>
             <div class="card__actions">
-              <a class="cta cta--whatsapp" data-wa="Здравствуйте! Хочу распечатать A4 (уточните: ч/б или цвет)">Написать в WhatsApp</a>
+              <a class="cta cta--whatsapp wa" href="#" data-wa="Здравствуйте! Нужна печать A4 (ч/б или цветная).">Написать в WhatsApp</a>
             </div>
           </article>
-          <article class="card card--hover glow">
+
+          <article class="card glow">
+            <div class="card__icon">🖨️</div>
+            <h3 class="card__title">Распечатка A3</h3>
+            <p class="card__text">Ч/б и цветная — 180 ₸</p>
+            <div class="card__actions">
+              <a class="cta cta--whatsapp wa" href="#" data-wa="Здравствуйте! Нужна печать A3 (ч/б или цветная).">Написать в WhatsApp</a>
+            </div>
+          </article>
+
+          <article class="card glow">
+            <div class="card__icon">📄</div>
+            <h3 class="card__title">Фото 3×4, 3.5×4.5, 9×12</h3>
+            <p class="card__text">Без ретуши — 900 ₸ (4 шт), с ретушью — 900–1500 ₸</p>
+            <div class="card__actions">
+              <a class="cta cta--whatsapp wa" href="#" data-wa="Здравствуйте! Хочу сделать фото 3×4 / 3.5×4.5 / 9×12.">Написать в WhatsApp</a>
+            </div>
+          </article>
+
+          <article class="card glow">
             <div class="card__icon">🛠️</div>
-            <h3 class="card__title">Реставрация фото</h3>
-            <p class="card__text">Убираем дефекты, восстанавливаем цвет, бережно работаем со старыми снимками.</p>
+            <h3 class="card__title">Реставрация и окрашивание</h3>
+            <p class="card__text">Восстановление старых фото, окрашивание — от 2000 ₸</p>
             <div class="card__actions">
-              <a class="cta cta--whatsapp" data-wa="Здравствуйте! Нужна реставрация фотографии">Написать в WhatsApp</a>
+              <a class="cta cta--whatsapp wa" href="#" data-wa="Здравствуйте! Нужна реставрация/окрашивание фото.">Написать в WhatsApp</a>
             </div>
           </article>
-          <article class="card card--hover glow">
+
+          <article class="card glow">
             <div class="card__icon">📼</div>
-            <h3 class="card__title">Оцифровка кассет</h3>
-            <p class="card__text">Перенесём ваш архив на современный носитель: USB/облако, с базовой чисткой звука.</p>
+            <h3 class="card__title">Оцифровка видеокассет</h3>
+            <p class="card__text">30 ₸ за минуту</p>
             <div class="card__actions">
-              <a class="cta cta--whatsapp" data-wa="Здравствуйте! Хочу оцифровать кассеты">Написать в WhatsApp</a>
+              <a class="cta cta--whatsapp wa" href="#" data-wa="Здравствуйте! Хочу оцифровать видеокассеты.">Написать в WhatsApp</a>
+            </div>
+          </article>
+
+          <article class="card glow">
+            <div class="card__icon">🎞️</div>
+            <h3 class="card__title">Оцифровка фотоплёнки</h3>
+            <p class="card__text">50 ₸ за кадр (если плёнка проявлена)</p>
+            <div class="card__actions">
+              <a class="cta cta--whatsapp wa" href="#" data-wa="Здравствуйте! Нужна оцифровка фотоплёнки.">Написать в WhatsApp</a>
+            </div>
+          </article>
+
+          <article class="card glow">
+            <div class="card__icon">🎨</div>
+            <h3 class="card__title">Индивидуальный дизайн</h3>
+            <p class="card__text">От 700 ₸ (макеты, визитки, брендинг)</p>
+            <div class="card__actions">
+              <a class="cta cta--whatsapp wa" href="#" data-wa="Здравствуйте! Нужен индивидуальный дизайн.">Написать в WhatsApp</a>
+            </div>
+          </article>
+
+          <article class="card glow">
+            <div class="card__icon">✨</div>
+            <h3 class="card__title">Оживление фотографии</h3>
+            <p class="card__text">310 ₸ за фото</p>
+            <div class="card__actions">
+              <a class="cta cta--whatsapp wa" href="#" data-wa="Здравствуйте! Хочу оживить фотографию.">Написать в WhatsApp</a>
+            </div>
+          </article>
+
+          <article class="card glow">
+            <div class="card__icon">💾</div>
+            <h3 class="card__title">Восстановление данных</h3>
+            <p class="card__text">400 ₸ за 1 ГБ (флеш‑карты)</p>
+            <div class="card__actions">
+              <a class="cta cta--whatsapp wa" href="#" data-wa="Здравствуйте! Нужна помощь с восстановлением данных.">Написать в WhatsApp</a>
+            </div>
+          </article>
+
+          <article class="card glow">
+            <div class="card__icon">🖥️</div>
+            <h3 class="card__title">Переустановка систем</h3>
+            <p class="card__text">Windows / Linux — 2000 ₸</p>
+            <div class="card__actions">
+              <a class="cta cta--whatsapp wa" href="#" data-wa="Здравствуйте! Нужна переустановка системы.">Написать в WhatsApp</a>
+            </div>
+          </article>
+
+          <article class="card glow">
+            <div class="card__icon">⚙️</div>
+            <h3 class="card__title">Кастомизация и оптимизация</h3>
+            <p class="card__text">Отключение телеметрии, настройки — от 2500 ₸</p>
+            <div class="card__actions">
+              <a class="cta cta--whatsapp wa" href="#" data-wa="Здравствуйте! Нужна кастомизация/оптимизация системы.">Написать в WhatsApp</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- PRICES -->
+    <!-- Prices -->
     <section id="prices" class="section section--alt section--reveal">
       <div class="container">
         <h2 class="section__title">Цены</h2>
         <div class="grid prices__grid">
           <div class="price glow">
-            <h3 class="price__title">Печать A4 (ч/б)</h3>
-            <p class="price__desc">Чёткая чёрно‑белая печать на качественной бумаге</p>
+            <h3 class="price__title">A4 ч/б</h3>
+            <p class="price__desc">Чёткая чёрно‑белая печать</p>
             <div class="price__value">40 ₸</div>
           </div>
           <div class="price glow">
-            <h3 class="price__title">Печать A4 (цвет)</h3>
-            <p class="price__desc">Яркая цветная печать с точной цветопередачей</p>
+            <h3 class="price__title">A4 цвет</h3>
+            <p class="price__desc">Яркая цветная печать</p>
             <div class="price__value">80 ₸</div>
           </div>
           <div class="price glow">
+            <h3 class="price__title">A3 ч/б/цвет</h3>
+            <p class="price__desc">Печать на A3 обоих типов</p>
+            <div class="price__value">180 ₸</div>
+          </div>
+          <div class="price glow">
             <h3 class="price__title">Фото 3×4 без ретуши</h3>
-            <p class="price__desc">4 штуки, стандарт для документов</p>
+            <p class="price__desc">4 штуки, стандарт</p>
             <div class="price__value">900 ₸</div>
           </div>
           <div class="price glow">
-            <h3 class="price__title">Фото 3×4 с ретушью</h3>
-            <p class="price__desc">Аккуратная ретушь и коррекция</p>
-            <div class="price__value">от 900 до 1500 ₸</div>
+            <h3 class="price__title">Фото с ретушью</h3>
+            <p class="price__desc">Коррекция и ретушь</p>
+            <div class="price__value">900–1500 ₸</div>
           </div>
           <div class="price glow">
-            <h3 class="price__title">Реставрация фото</h3>
-            <p class="price__desc">Скан, восстановление, обработка</p>
-            <div class="price__value">индивидуально</div>
+            <h3 class="price__title">Реставрация/окрашивание</h3>
+            <p class="price__desc">Скан, восстановление, цвет</p>
+            <div class="price__value">от 2000 ₸</div>
           </div>
           <div class="price glow">
             <h3 class="price__title">Оцифровка кассет</h3>
-            <p class="price__desc">Перенос на USB/облако</p>
-            <div class="price__value">индивидуально</div>
+            <p class="price__desc">Перенос видео</p>
+            <div class="price__value">30 ₸/мин</div>
+          </div>
+          <div class="price glow">
+            <h3 class="price__title">Оцифровка плёнки</h3>
+            <p class="price__desc">Кадры фото</p>
+            <div class="price__value">50 ₸/кадр</div>
+          </div>
+          <div class="price glow">
+            <h3 class="price__title">Индивидуальный дизайн</h3>
+            <p class="price__desc">Макеты, брендинг</p>
+            <div class="price__value">от 700 ₸</div>
+          </div>
+          <div class="price glow">
+            <h3 class="price__title">Оживление фото</h3>
+            <p class="price__desc">Анимация кадра</p>
+            <div class="price__value">310 ₸</div>
+          </div>
+          <div class="price glow">
+            <h3 class="price__title">Восстановление данных</h3>
+            <p class="price__desc">Флеш‑карты</p>
+            <div class="price__value">400 ₸/ГБ</div>
+          </div>
+          <div class="price glow">
+            <h3 class="price__title">Переустановка систем</h3>
+            <p class="price__desc">Windows / Linux</p>
+            <div class="price__value">2000 ₸</div>
+          </div>
+          <div class="price glow">
+            <h3 class="price__title">Кастомизация/оптимизация</h3>
+            <p class="price__desc">Под задачи, без телеметрии</p>
+            <div class="price__value">от 2500 ₸</div>
           </div>
         </div>
         <p class="note">Цены ориентировочные — уточняйте по WhatsApp. При большом объёме — скидки.</p>
       </div>
     </section>
 
-    <!-- GALLERY -->
+    <!-- Gallery -->
     <section id="gallery" class="section section--reveal">
       <div class="container">
         <h2 class="section__title">Галерея</h2>
         <div class="grid gallery__grid">
           <figure class="gallery__item">
-            <img src="https://images.unsplash.com/photo-1519682577862-22b62b24e993?q=80&w=900" alt="Студийный портрет в стиле KODAK" />
+            <img loading="lazy" src="https://images.unsplash.com/photo-1519682577862-22b62b24e993?auto=format&fit=crop&w=1000&q=80" alt="Студийный портрет" />
           </figure>
           <figure class="gallery__item">
-            <img src="https://images.unsplash.com/photo-1531384441138-2736e62e0916?q=80&w=900" alt="Реставрация старых снимков" />
+            <img loading="lazy" src="https://images.unsplash.com/photo-1531384441138-2736e62e0916?auto=format&fit=crop&w=1000&q=80" alt="Реставрация старых снимков" />
           </figure>
           <figure class="gallery__item">
-            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=900" alt="Печать фотографий высокого качества" />
+            <img loading="lazy" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80" alt="Печать фотографий высокого качества" />
           </figure>
           <figure class="gallery__item">
-            <img src="https://images.unsplash.com/photo-1547082299-de196ea013d6?q=80&w=900" alt="Печать крупных форматов" />
+            <img loading="lazy" src="https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&w=1000&q=80" alt="Печать крупных форматов" />
           </figure>
           <figure class="gallery__item">
-            <img src="https://images.unsplash.com/photo-1520974698377-1bfe203eb7b5?q=80&w=900" alt="Семейная съёмка" />
+            <img loading="lazy" src="https://images.unsplash.com/photo-1520974698377-1bfe203eb7b5?auto=format&fit=crop&w=1000&q=80" alt="Семейная съёмка" />
           </figure>
           <figure class="gallery__item">
-            <img src="https://images.unsplash.com/photo-1511936609330-02ac7f445303?q=80&w=900" alt="Документ‑фото по стандарту" />
+            <img loading="lazy" src="https://images.unsplash.com/photo-1511936609330-02ac7f445303?auto=format&fit=crop&w=1000&q=80" alt="Документ‑фото по стандарту" />
           </figure>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- Contact -->
     <section id="contact" class="section section--reveal">
       <div class="container contact__wrap">
         <div class="contact__info glow">
@@ -172,18 +272,10 @@
             <li><strong>Телефон:</strong> <a href="tel:+77769699993">+7 776 969 9993</a></li>
             <li><strong>WhatsApp:</strong> <a class="wa" href="#" data-wa="Здравствуйте! Хочу уточнить услуги и цены.">Написать</a></li>
           </ul>
-          <div class="contact__quick">
-            <span class="chip">Быстрая связь:</span>
-            <a class="chip chip--cta wa" href="#" data-wa="Здравствуйте! Хочу сделать фото 3×4">Фото 3×4</a>
-            <a class="chip chip--cta wa" href="#" data-wa="Здравствуйте! Нужна печать A4: ч/б или цвет">Печать A4</a>
-            <a class="chip chip--cta wa" href="#" data-wa="Здравствуйте! Нужна реставрация фото">Реставрация</a>
-            <a class="chip chip--cta wa" href="#" data-wa="Здравствуйте! Нужна оцифровка кассет">Оцифровка кассет</a>
-          </div>
-        </div>
         <div class="contact__map" role="figure" aria-label="Карта расположения">
           <iframe
             title="Кабанбай батыра 99 — карта"
-            src="https://www.google.com/maps?q=Кабанбай%20батыра%2099,%20Усть-Каменогорск&output=embed"
+            src="https://www.google.com/maps?q=%D0%9A%D0%B0%D0%B1%D0%B0%D0%BD%D0%B1%D0%B0%D0%B9%20%D0%B1%D0%B0%D1%82%D1%8B%D1%80%D0%B0%2099,%20%D0%A3%D1%81%D1%82%D1%8C-%D0%9A%D0%B0%D0%BC%D0%B5%D0%BD%D0%BE%D0%B3%D0%BE%D1%80%D1%81%D0%BA&output=embed"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade">
           </iframe>
@@ -192,15 +284,14 @@
     </section>
   </main>
 
-  <footer class="footer">
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <span class="logo__mark neon-pulse">K</span><span class="logo__text">KODAK</span>
+        <span class="logo__mark">K</span><span class="logo__text">KODAK</span>
       </div>
       <p class="footer__text">© KODAK Фотосалон, г. Усть‑Каменогорск. Кабанбай батыра 99. Ежедневно 8:30–18:30. Тел.: +7 776 969 9993.</p>
     </div>
   </footer>
 
   <script src="script.js"></script>
-</body>
-</html>
