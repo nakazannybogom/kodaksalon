@@ -15,6 +15,7 @@
   /* Другое */
   --radius:16px;
   --shadow:0 10px 30px rgba(0,0,0,.12);
+  --snow-color: rgba(255,255,255,0.95);
 }
 
 /* Тёмная тема */
@@ -25,6 +26,10 @@
   --card:#121214;
   --border:rgba(255,255,255,.10);
 }
+
+/* Adjust snow color for light theme */
+.theme-dark{--snow-color: rgba(255,255,255,0.95)}
+.theme-light{--snow-color: rgba(0,0,0,0.12)}
 
 /* База */
 *{box-sizing:border-box}
@@ -123,14 +128,9 @@ h1,h2,h3{font-family:'Montserrat',sans-serif}
 
 /* Grids */
 .grid{display:grid;gap:20px}
-.services__grid{grid-template-columns:repeat(4,1fr)}
-@media (max-width:1024px){.services__grid{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:768px){.services__grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:520px){.services__grid{grid-template-columns:1fr}}
+.services__grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 
-.prices__grid{grid-template-columns:repeat(3,1fr)}
-@media (max-width:960px){.prices__grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:560px){.prices__grid{grid-template-columns:1fr}}
+.prices__grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
 
 /* Cards */
 .card{
@@ -174,9 +174,7 @@ h1,h2,h3{font-family:'Montserrat',sans-serif}
 }
 
 /* Gallery */
-.gallery__grid{grid-template-columns:repeat(3,1fr)}
-@media (max-width:840px){.gallery__grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:560px){.gallery__grid{grid-template-columns:1fr}}
+.gallery__grid{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
 .gallery__item{
   position:relative;
   border-radius:16px;
@@ -286,3 +284,27 @@ h1,h2,h3{font-family:'Montserrat',sans-serif}
   .hero__content{padding:60px 0}
   .price__value{font-size:20px}
 }
+
+/* Snowflakes — праздничная анимация */
+.snowflakes{position:fixed;inset:0;pointer-events:none;z-index:60;overflow:hidden}
+.snowflake{
+  position:absolute;top:-10%;font-size:18px;opacity:.95;filter:drop-shadow(0 2px 6px rgba(0,0,0,.25));
+  pointer-events:none;display:inline-block;transform-origin:center center;
+}
+.snowflake{color:var(--snow-color)}
+.snowflake-inner{
+  display:inline-block;animation-name:sway;animation-iteration-count:infinite;animation-timing-function: ease-in-out;
+}
+@keyframes fall{0%{transform:translateY(-10vh) rotate(0deg)}100%{transform:translateY(120vh) rotate(360deg)}}
+@keyframes sway{0%{transform:translateX(0)}50%{transform:translateX(28px)}100%{transform:translateX(0)}}
+
+/* Варьируем размеры и прозрачность через inline styles в JS */
+
+/* Небольшие праздничные акценты для hero */
+.hero{background-image:linear-gradient(180deg,rgba(255,255,255,0.02),transparent)}
+.hero__title{letter-spacing:0.6px}
+
+/* More adaptive container padding */
+.container{max-width:1100px;margin:0 auto;padding:0 18px}
+
+
