@@ -1,3 +1,5 @@
+[file name]: script.js
+[file content begin]
 // Настройки
 const WA_NUMBER = '77769699993'; // номер WhatsApp без +
 
@@ -76,6 +78,13 @@ const io = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
       e.target.classList.add('is-visible');
+      
+      // Добавляем анимации для элементов внутри секции
+      const animatedElements = e.target.querySelectorAll('.animate-fade-in, .animate-pop, .animate-slide-up, .animate-zoom-in');
+      animatedElements.forEach((el, index) => {
+        el.style.animationDelay = `${index * 0.1}s`;
+      });
+      
       io.unobserve(e.target);
     }
   });
@@ -90,6 +99,12 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (target) {
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      
+      // Закрываем мобильное меню если открыто
+      if (navList && navList.style.display === 'flex') {
+        navList.style.display = 'none';
+        toggle.setAttribute('aria-expanded', 'false');
+      }
     }
   });
 });
@@ -109,38 +124,40 @@ document.querySelectorAll('.wa, .cta--whatsapp, .chip--cta, .cta--wa-header').fo
   });
 });
 
-/* Snowflakes generator: adds decorative falling snowflakes for a festive look */
-function createSnowflakes(count = 30) {
-  const container = document.querySelector('.snowflakes');
-  if (!container) return;
-  container.innerHTML = '';
-  const width = window.innerWidth;
-  const isMobile = width <= 520;
-  const total = isMobile ? Math.max(6, Math.floor(count / 4)) : count;
-  for (let i = 0; i < total; i++) {
-    const f = document.createElement('span');
-    f.className = 'snowflake';
-    const inner = document.createElement('span');
-    inner.className = 'snowflake-inner';
-    inner.textContent = '❄';
-    f.appendChild(inner);
-    const left = Math.random() * 100;
-    const size = 8 + Math.random() * 28; // px
-    const delay = Math.random() * -20; // start offset
-    const duration = 8 + Math.random() * 14; // seconds
-    const swayDuration = 3 + Math.random() * 4;
-    f.style.left = left + 'vw';
-    f.style.fontSize = size + 'px';
-    f.style.opacity = (0.35 + Math.random() * 0.75).toFixed(2);
-    f.style.animation = `fall ${duration}s linear ${delay}s infinite`;
-    inner.style.animation = `sway ${swayDuration}s ease-in-out ${delay}s infinite`;
-    container.appendChild(f);
-  }
-}
-
-window.addEventListener('load', () => createSnowflakes(36));
-window.addEventListener('resize', () => {
-  // debounce minimal
-  clearTimeout(window.__sfResize);
-  window.__sfResize = setTimeout(() => createSnowflakes(36), 250);
+/* Анимация при наведении на карточки */
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    const icon = card.querySelector('.card__icon');
+    if (icon) {
+      icon.style.transform = 'scale(1.2)';
+    }
+  });
+  
+  card.addEventListener('mouseleave', () => {
+    const icon = card.querySelector('.card__icon');
+    if (icon) {
+      icon.style.transform = 'scale(1)';
+    }
+  });
 });
+
+/* Инициализация анимаций при загрузке */
+window.addEventListener('load', () => {
+  // Запускаем анимации для уже видимых элементов
+  revealSections.forEach(section => {
+    if (section.getBoundingClientRect().top < window.innerHeight * 0.9) {
+      section.classList.add('is-visible');
+    }
+  });
+  
+  // Добавляем небольшую задержку для плавного появления контента
+  setTimeout(() => {
+    document.body.style.opacity = 1;
+  }, 100);
+});
+
+/* Плавное появление страницы */
+document.body.style.opacity = 0;
+document.body.style.transition = 'opacity 0.5s ease';
+
+[file content end]
