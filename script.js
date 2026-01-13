@@ -1,5 +1,3 @@
-[file name]: script.js
-[file content begin]
 // Настройки
 const WA_NUMBER = '77769699993'; // номер WhatsApp без +
 
@@ -22,41 +20,43 @@ function getCookie(name) {
 const cookieTheme = getCookie('theme');
 const savedTheme = cookieTheme || localStorage.getItem('theme');
 
-if (savedTheme === 'light') {
-  body.classList.remove('theme-dark');
-  body.classList.add('theme-light');
-  themeBtn.textContent = '☀️';
-} else {
-  body.classList.add('theme-dark');
-  body.classList.remove('theme-light');
-  themeBtn.textContent = '🌙';
+if (themeBtn) {
+  if (savedTheme === 'light') {
+    body.classList.remove('theme-dark');
+    body.classList.add('theme-light');
+    themeBtn.textContent = '☀️';
+  } else {
+    body.classList.add('theme-dark');
+    body.classList.remove('theme-light');
+    themeBtn.textContent = '🌙';
+  }
+
+  themeBtn.addEventListener('click', () => {
+    const isDark = body.classList.toggle('theme-dark');
+    if (isDark) body.classList.remove('theme-light'); else body.classList.add('theme-light');
+    themeBtn.textContent = isDark ? '🌙' : '☀️';
+    const val = isDark ? 'dark' : 'light';
+    try { localStorage.setItem('theme', val); } catch (e) {}
+    setCookie('theme', val, 365);
+  });
 }
 
-themeBtn.addEventListener('click', () => {
-  const isDark = body.classList.toggle('theme-dark');
-  if (isDark) body.classList.remove('theme-light'); else body.classList.add('theme-light');
-  themeBtn.textContent = isDark ? '🌙' : '☀️';
-  const val = isDark ? 'dark' : 'light';
-  try { localStorage.setItem('theme', val); } catch (e) {}
-  setCookie('theme', val, 365);
-});
-
 /* Мобильное меню */
+const nav = document.querySelector('.nav');
 const toggle = document.querySelector('.nav__toggle');
 const navList = document.querySelector('.nav__list');
 
-if (toggle && navList) {
+if (toggle && navList && nav) {
   function closeNav() {
-    navList.style.display = 'none';
+    nav.classList.remove('nav--open');
     toggle.setAttribute('aria-expanded', 'false');
   }
   function openNav() {
-    navList.style.display = 'flex';
+    nav.classList.add('nav--open');
     toggle.setAttribute('aria-expanded', 'true');
   }
   toggle.addEventListener('click', () => {
-    const opened = navList.style.display === 'flex';
-    opened ? closeNav() : openNav();
+    nav.classList.contains('nav--open') ? closeNav() : openNav();
   });
   document.addEventListener('click', (e) => {
     if (!navList.contains(e.target) && !toggle.contains(e.target)) closeNav();
@@ -64,7 +64,7 @@ if (toggle && navList) {
   const mq = window.matchMedia('(min-width: 901px)');
   mq.addEventListener('change', (ev) => {
     if (ev.matches) {
-      navList.style.display = 'flex';
+      nav.classList.remove('nav--open');
       toggle.setAttribute('aria-expanded', 'false');
     } else {
       closeNav();
@@ -80,9 +80,9 @@ const io = new IntersectionObserver((entries) => {
       e.target.classList.add('is-visible');
       
       // Добавляем анимации для элементов внутри секции
-      const animatedElements = e.target.querySelectorAll('.animate-fade-in, .animate-pop, .animate-slide-up, .animate-zoom-in');
+      const animatedElements = e.target.querySelectorAll('.animate-fade-in, .animate-pop, .animate-slide-up, .animate-zoom-in, .animate-slide-left, .animate-slide-right');
       animatedElements.forEach((el, index) => {
-        el.style.animationDelay = `${index * 0.1}s`;
+        el.style.setProperty('--anim-delay', `${index * 0.08}s`);
       });
       
       io.unobserve(e.target);
@@ -101,8 +101,8 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       
       // Закрываем мобильное меню если открыто
-      if (navList && navList.style.display === 'flex') {
-        navList.style.display = 'none';
+      if (nav && nav.classList.contains('nav--open')) {
+        nav.classList.remove('nav--open');
         toggle.setAttribute('aria-expanded', 'false');
       }
     }
@@ -152,12 +152,8 @@ window.addEventListener('load', () => {
   
   // Добавляем небольшую задержку для плавного появления контента
   setTimeout(() => {
-    document.body.style.opacity = 1;
+    document.body.classList.add('is-ready');
   }, 100);
 });
 
 /* Плавное появление страницы */
-document.body.style.opacity = 0;
-document.body.style.transition = 'opacity 0.5s ease';
-
-[file content end]
