@@ -1,358 +1,200 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>KODAK Фотосалон — Услуги и цены</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kodak Фотоcалон | Усть-Каменогорск</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="header" role="banner">
-    <div class="container header__inner">
-      <a href="#" class="logo" aria-label="KODAK Фотосалон">
-        <span class="logo__mark">K</span><span class="logo__text">KODAK</span>
-      </a>
-      <nav class="nav" aria-label="Главное меню">
-        <button class="nav__toggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
-        <ul class="nav__list">
-          <li><a href="#services">Услуги</a></li>
-          <li><a href="#prices">Цены</a></li>
-          <li><a href="#gallery">Галерея</a></li>
-          <li><a href="#contact">Контакты</a></li>
-        </ul>
-      </nav>
-      <div class="header__actions">
-        <button id="themeToggle" class="theme-btn" aria-label="Сменить тему" title="Сменить тему">🌙</button>
-        <a class="cta cta--wa-header wa" href="#" data-wa="Здравствуйте! Хочу сделать фото 3×4.">Фото 3×4</a>
-      </div>
-    </div>
-  </header>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-grid"></div>
 
-  <main>
-    <!-- Hero -->
-    <section class="hero" aria-label="Главный баннер">
-      <div class="hero__bg" aria-hidden="true">
-        <div class="hero__gradient"></div>
-        <div class="hero__pattern"></div>
-        <div class="hero__neon-lines"></div>
-        <div class="hero__orbs"></div>
-      </div>
-      <div class="container hero__content">
-        <h1 class="hero__title animate-float">KODAK — фотографии, которые живут</h1>
-        <p class="hero__subtitle">Печать A4/A3, фото 3×4/3.5×4.5/9×12, реставрация и окрашивание, оцифровка кассет и плёнки, дизайн и IT‑услуги — быстро, качественно и красиво.</p>
-        <div class="hero__actions">
-          <a class="cta animate-pulse" href="#services">Смотреть услуги</a>
-          <a class="cta cta--ghost" href="#contact">Адрес: Кабанбай батыра 99</a>
+    <header class="site-header">
+        <div class="brand">
+            <div class="brand-mark kodak-logo" aria-hidden="true">
+                <span class="kodak-k">K</span>
+                <span class="kodak-word">KODAK</span>
+            </div>
+            <div class="brand-text">
+                <span class="brand-title">Kodak</span>
+                <span class="brand-subtitle" data-i18n="brandSubtitle">Фотосалон</span>
+            </div>
         </div>
-        <div class="hero__tags">
-          <span class="chip">Фото 3×4 от 600 ₸</span>
-          <span class="chip">Печать A4 от 40 ₸</span>
-          <span class="chip">Реставрация от 2000 ₸</span>
-          <span class="chip">Оцифровка кассет</span>
-          <span class="chip">Windows/Linux</span>
+        <div class="header-controls">
+            <div class="lang-switch" role="group" aria-label="Language">
+                <button class="chip" data-lang="ru">RU</button>
+                <button class="chip" data-lang="kk">KZ</button>
+                <button class="chip" data-lang="en">EN</button>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span class="theme-icon"><i class="fa-solid fa-sun"></i></span>
+                <span class="theme-text">Светлая</span>
+            </button>
         </div>
-      </div>
-    </section>
+    </header>
 
-    <!-- Services -->
-    <section id="services" class="section section--reveal">
-      <div class="container">
-        <h2 class="section__title animate-slide-up">Наши услуги</h2>
-
-        <div class="grid services__grid">
-          <!-- Фотоуслуги -->
-          <article class="card animate-fade-in">
-            <div class="card__icon"><i class="fas fa-camera"></i></div>
-            <h3 class="card__title">Фото 3×4</h3>
-            <p class="card__text">С нашим фото: <strong>900 ₸</strong></p>
-            <p class="card__text">С фото клиента: <strong>600 ₸</strong></p>
-            <p class="card__text">Электронный вариант: <strong>600 ₸ / 200 ₸</strong></p>
-            <div class="card__actions">
-              <a class="cta cta--whatsapp wa" href="#" data-wa="Здравствуйте! Хочу сделать фото 3×4.">Заказать</a>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <p class="hero-kicker" data-i18n="heroKicker">Фото. Печать. Дизайн. Ретушь.</p>
+                <h1 data-i18n="heroTitle">Фотосалон Kodak в Усть-Каменогорске</h1>
+                <p class="hero-subtitle" data-i18n="heroSubtitle">
+                    Быстрая печать, документы, оцифровка, реставрация, рамки и подарки — все в одном месте.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn primary" data-action="whatsapp" data-message="hello">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span data-i18n="ctaPrimary">Написать в WhatsApp</span>
+                    </button>
+                    <a class="btn ghost" href="#prices">
+                        <i class="fa-solid fa-list"></i>
+                        <span data-i18n="ctaSecondary">Смотреть цены</span>
+                    </a>
+                </div>
+                <div class="hero-note">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span data-i18n="heroAddress">Казахстан, ВКО, г. Усть-Каменогорск, ул. Кабанбай батыра 99</span>
+                </div>
             </div>
-          </article>
-
-          <!-- Печать А4 -->
-          <article class="card animate-fade-in" style="animation-delay: 0.1s">
-            <div class="card__icon"><i class="fas fa-print"></i></div>
-            <h3 class="card__title">Печать А4</h3>
-            <p class="card__text">Ч/б: <strong>40 ₸</strong></p>
-            <p class="card__text">Цветная: <strong>80 ₸</strong></p>
-            <p class="card__text">Двусторонняя Ч/б: <strong>70 ₸</strong></p>
-            <p class="card__text">Двусторонняя цветная: <strong>150 ₸</strong></p>
-            <div class="card__actions">
-              <a class="cta cta--whatsapp wa" href="#" data-wa="Здравствуйте! Нужна печать A4.">Заказать</a>
+            <div class="hero-card">
+                <div class="hero-card-header">
+                    <span class="badge" data-i18n="badgeFast">Быстро</span>
+                    <span class="badge" data-i18n="badgeQuality">Качественно</span>
+                    <span class="badge" data-i18n="badgeLocal">Рядом</span>
+                </div>
+                <h3 data-i18n="quickOrderTitle">Быстрый заказ печати</h3>
+                <p data-i18n="quickOrderSubtitle">Выберите формат — мы подготовим сообщение в WhatsApp.</p>
+                <div class="quick-buttons">
+                    <button class="quick" data-size-key="size34" data-i18n="size34">Фото 3×4</button>
+                    <button class="quick" data-size-key="size46" data-i18n="size46">Фото 4×6</button>
+                    <button class="quick" data-size-key="sizeA4Color" data-i18n="sizeA4Color">A4 цветная</button>
+                    <button class="quick" data-size-key="sizeA4BW" data-i18n="sizeA4BW">A4 ч/б</button>
+                </div>
+                <div class="custom-order">
+                    <label for="customSize" data-i18n="customSizeLabel">Свой формат</label>
+                    <div class="custom-row">
+                        <input id="customSize" type="text" placeholder="Например: 10x15" data-i18n-placeholder="customSizePlaceholder">
+                        <input id="customQty" type="number" min="1" value="1">
+                        <button class="btn small" id="customOrderBtn">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span data-i18n="customOrderBtn">Отправить</span>
+                        </button>
+                    </div>
+                </div>
             </div>
-          </article>
+        </section>
 
-          <!-- Фотопечать -->
-          <article class="card animate-fade-in" style="animation-delay: 0.2s">
-            <div class="card__icon"><i class="fas fa-images"></i></div>
-            <h3 class="card__title">Фотопечать</h3>
-            <p class="card__text">10×15 (мат/глянец): <strong>90 ₸</strong></p>
-            <p class="card__text">15×20 (А5): <strong>190 ₸</strong></p>
-            <p class="card__text">А4 матовая: <strong>200–300 ₸</strong></p>
-            <p class="card__text">А4 сатин: <strong>350 ₸</strong></p>
-            <p class="card__text">А4 глянец: <strong>150–300 ₸</strong></p>
-            <div class="card__actions">
-              <a class="cta cta--whatsapp wa" href="#" data-wa="Здравствуйте! Нужна фотопечать.">Заказать</a>
+        <section class="promo">
+            <div class="promo-card">
+                <div class="promo-icon">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="promo-text">
+                    <h3 data-i18n="promoTitle">Скидка 5%</h3>
+                    <p data-i18n="promoText">
+                        Подпишитесь на наш Instagram и оставьте отзыв в 2GIS — покажите на кассе и получите скидку.
+                    </p>
+                </div>
+                <div class="promo-actions">
+                    <a class="btn ghost" href="https://www.instagram.com/kodak_ust_kamenogorsk/" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-instagram"></i>
+                        Instagram
+                    </a>
+                    <a class="btn ghost" href="https://2gis.kz/ust-kamenogorsk/search/Kodak/firm/12807639721313735/82.632996%2C49.951394?m=82.628027%2C49.948635%2F10.79" target="_blank" rel="noopener">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        2GIS
+                    </a>
+                </div>
             </div>
-          </article>
+        </section>
 
-          <!-- Реставрация -->
-          <article class="card animate-fade-in" style="animation-delay: 0.3s">
-            <div class="card__icon"><i class="fas fa-history"></i></div>
-            <h3 class="card__title">Реставрация фото</h3>
-            <p class="card__text">Ручная: <strong>2000 ₸</strong><br><small>3–7 дней</small></p>
-            <p class="card__text">AI-реставрация: <strong>от 2500 ₸</strong><br><small>15–30 минут</small></p>
-            <div class="card__note">
-              <small>AI может иметь побочные эффекты. Мы не несём ответственность.</small>
+        <section class="prices" id="prices">
+            <div class="section-title">
+                <h2 data-i18n="pricesTitle">Услуги и цены</h2>
+                <p data-i18n="pricesSubtitle">Все позиции из прайс-листа. Точные суммы зависят от объема и бумаги.</p>
             </div>
-            <div class="card__actions">
-              <a class="cta cta--whatsapp wa" href="#" data-wa="Здравствуйте! Нужна реставрация фото.">Заказать</a>
-            </div>
-          </article>
+            <div class="service-grid" id="serviceGrid"></div>
+        </section>
 
-          <!-- Оживление фото -->
-          <article class="card animate-fade-in" style="animation-delay: 0.4s">
-            <div class="card__icon"><i class="fas fa-magic"></i></div>
-            <h3 class="card__title">Оживление фото</h3>
-            <p class="card__text">Анимация фотографии</p>
-            <p class="card__price">350 ₸ / фото</p>
-            <div class="card__actions">
-              <a class="cta cta--whatsapp wa" href="#" data-wa="Здравствуйте! Хочу оживить фотографию.">Заказать</a>
+        <section class="contacts" id="contacts">
+            <div class="section-title">
+                <h2 data-i18n="contactsTitle">Контакты</h2>
+                <p data-i18n="contactsSubtitle">Пишите или звоните — отвечаем быстро.</p>
             </div>
-          </article>
-
-          <!-- IT-услуги -->
-          <article class="card animate-fade-in" style="animation-delay: 0.5s">
-            <div class="card__icon"><i class="fas fa-laptop-code"></i></div>
-            <h3 class="card__title">IT-услуги</h3>
-            <p class="card__text">Windows/Linux установка: <strong>от 2000 ₸</strong></p>
-            <p class="card__text">Активация, оптимизация</p>
-            <p class="card__text">Сложность: <strong>по договорённости</strong></p>
-            <div class="card__actions">
-              <a class="cta cta--whatsapp wa" href="#" data-wa="Здравствуйте! Нужна переустановка системы.">Заказать</a>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p>+7 776 969 9993</p>
+                    <button class="btn primary" data-action="whatsapp" data-message="hello">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span data-i18n="ctaPrimary">Написать в WhatsApp</span>
+                    </button>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <h3>Instagram</h3>
+                    <p>@kodak_ust_kamenogorsk</p>
+                    <a class="btn ghost" href="https://www.instagram.com/kodak_ust_kamenogorsk/" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span data-i18n="instagramBtn">Открыть</span>
+                    </a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3 data-i18n="addressTitle">Адрес</h3>
+                    <p data-i18n="heroAddress">Казахстан, ВКО, г. Усть-Каменогорск, ул. Кабанбай батыра 99</p>
+                    <a class="btn ghost" href="https://2gis.kz/ust-kamenogorsk/search/Kodak/firm/12807639721313735/82.632996%2C49.951394?m=82.628027%2C49.948635%2F10.79" target="_blank" rel="noopener">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <span data-i18n="mapBtn">Открыть карту</span>
+                    </a>
+                </div>
             </div>
-          </article>
+        </section>
 
-          <!-- Новые услуги -->
-          <article class="card animate-fade-in" style="animation-delay: 0.6s">
-            <div class="card__icon"><i class="fas fa-gem"></i></div>
-            <h3 class="card__title">Набор похоронный</h3>
-            <p class="card__text">Рамка черная с ножкой</p>
-            <p class="card__text">Распечатка с заменой фона</p>
-            <p class="card__text">Лента черная вставная</p>
-            <p class="card__price">2500 ₸</p>
-            <div class="card__actions">
-              <a class="cta cta--whatsapp wa" href="#" data-wa="Здравствуйте! Нужен похоронный набор.">Заказать</a>
+        <section class="tech">
+            <div class="tech-card">
+                <div class="tech-icon">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <div>
+                    <h3 data-i18n="techTitle">Технические вопросы и предложения</h3>
+                    <p data-i18n="techSubtitle">Пишите в Telegram: @mastermind_eu</p>
+                </div>
+                <a class="btn ghost" href="https://t.me/mastermind_eu" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-telegram"></i>
+                    Telegram
+                </a>
             </div>
-          </article>
+        </section>
+    </main>
 
-          <article class="card animate-fade-in" style="animation-delay: 0.7s">
-            <div class="card__icon"><i class="fas fa-file-contract"></i></div>
-            <h3 class="card__title">Резюме</h3>
-            <p class="card__text">Дизайн и верстка</p>
-            <p class="card__text">Профессиональный макет</p>
-            <p class="card__price">от 700 ₸</p>
-            <div class="card__actions">
-              <a class="cta cta--whatsapp wa" href="#" data-wa="Здравствуйте! Нужно составить резюме.">Заказать</a>
+    <footer class="site-footer">
+        <div class="footer-left">
+            <div class="brand-mark small kodak-logo" aria-hidden="true">
+                <span class="kodak-k">K</span>
+                <span class="kodak-word">KODAK</span>
             </div>
-          </article>
-
-          <article class="card animate-fade-in" style="animation-delay: 0.8s">
-            <div class="card__icon"><i class="fas fa-passport"></i></div>
-            <h3 class="card__title">Фото на VISA GREEN CARD</h3>
-            <p class="card__text">Стандарт международный</p>
-            <p class="card__text">Электронный вариант</p>
-            <p class="card__price">от 700 ₸</p>
-            <div class="card__actions">
-              <a class="cta cta--whatsapp wa" href="#" data-wa="Здравствуйте! Нужно фото на визу/green card.">Заказать</a>
+            <div>
+                <div class="brand-title">Kodak</div>
+                <div class="footer-subtitle" data-i18n="footerText">Фотосалон · Усть-Каменогорск</div>
             </div>
-          </article>
-
-          <!-- Остальные услуги -->
-          <article class="card animate-fade-in" style="animation-delay: 0.9s">
-            <div class="card__icon"><i class="fas fa-palette"></i></div>
-            <h3 class="card__title">Дизайн</h3>
-            <p class="card__text">Макеты, визитки, брендинг</p>
-            <p class="card__price">от 700 ₸</p>
-            <div class="card__actions">
-              <a class="cta cta--whatsapp wa" href="#" data-wa="Здравствуйте! Нужен дизайн.">Заказать</a>
-            </div>
-          </article>
-
-          <article class="card animate-fade-in" style="animation-delay: 1.0s">
-            <div class="card__icon"><i class="fas fa-film"></i></div>
-            <h3 class="card__title">Оцифровка</h3>
-            <p class="card__text">Видеокассеты: <strong>30 ₸/мин</strong></p>
-            <p class="card__text">Фотоплёнка: <strong>50 ₸/кадр</strong></p>
-            <div class="card__actions">
-              <a class="cta cta--whatsapp wa" href="#" data-wa="Здравствуйте! Хочу оцифровать носители.">Заказать</a>
-            </div>
-          </article>
-
-          <article class="card animate-fade-in" style="animation-delay: 1.1s">
-            <div class="card__icon"><i class="fas fa-hdd"></i></div>
-            <h3 class="card__title">Восстановление данных</h3>
-            <p class="card__text">Флеш-карты, диски</p>
-            <p class="card__price">400 ₸ / ГБ</p>
-            <div class="card__actions">
-              <a class="cta cta--whatsapp wa" href="#" data-wa="Здравствуйте! Нужно восстановить данные.">Заказать</a>
-            </div>
-          </article>
-
         </div>
-      </div>
-    </section>
-
-    <!-- Prices -->
-    <section id="prices" class="section section--alt section--reveal">
-      <div class="container">
-        <h2 class="section__title animate-slide-up">Цены</h2>
-        <div class="grid prices__grid">
-          <div class="price animate-pop">
-            <h3 class="price__title">Фото 3×4</h3>
-            <p class="price__desc">С нашим фото</p>
-            <div class="price__value">900 ₸</div>
-          </div>
-          <div class="price animate-pop" style="animation-delay: 0.1s">
-            <h3 class="price__title">Фото 3×4</h3>
-            <p class="price__desc">С фото клиента</p>
-            <div class="price__value">600 ₸</div>
-          </div>
-          <div class="price animate-pop" style="animation-delay: 0.2s">
-            <h3 class="price__title">Печать А4 ч/б</h3>
-            <p class="price__desc">Односторонняя</p>
-            <div class="price__value">40 ₸</div>
-          </div>
-          <div class="price animate-pop" style="animation-delay: 0.3s">
-            <h3 class="price__title">Печать А4 цвет</h3>
-            <p class="price__desc">Односторонняя</p>
-            <div class="price__value">80 ₸</div>
-          </div>
-          <div class="price animate-pop" style="animation-delay: 0.4s">
-            <h3 class="price__title">Фото 10×15</h3>
-            <p class="price__desc">Мат/глянец</p>
-            <div class="price__value">90 ₸</div>
-          </div>
-          <div class="price animate-pop" style="animation-delay: 0.5s">
-            <h3 class="price__title">Фото 15×20</h3>
-            <p class="price__desc">А5, мат/глянец</p>
-            <div class="price__value">190 ₸</div>
-          </div>
-          <div class="price animate-pop" style="animation-delay: 0.6s">
-            <h3 class="price__title">Оживление фото</h3>
-            <p class="price__desc">Анимация</p>
-            <div class="price__value">350 ₸</div>
-          </div>
-          <div class="price animate-pop" style="animation-delay: 0.7s">
-            <h3 class="price__title">Реставрация</h3>
-            <p class="price__desc">Ручная работа</p>
-            <div class="price__value">2000 ₸</div>
-          </div>
-          <div class="price animate-pop" style="animation-delay: 0.8s">
-            <h3 class="price__title">Реставрация AI</h3>
-            <p class="price__desc">Быстрая, AI</p>
-            <div class="price__value">от 2500 ₸</div>
-          </div>
-          <div class="price animate-pop" style="animation-delay: 0.9s">
-            <h3 class="price__title">Windows/Linux</h3>
-            <p class="price__desc">Установка</p>
-            <div class="price__value">от 2000 ₸</div>
-          </div>
-          <div class="price animate-pop" style="animation-delay: 1.0s">
-            <h3 class="price__title">Набор похоронный</h3>
-            <p class="price__desc">Полный комплект</p>
-            <div class="price__value">2500 ₸</div>
-          </div>
-          <div class="price animate-pop" style="animation-delay: 1.1s">
-            <h3 class="price__title">Резюме</h3>
-            <p class="price__desc">Дизайн и верстка</p>
-            <div class="price__value">от 700 ₸</div>
-          </div>
-          <div class="price animate-pop" style="animation-delay: 1.2s">
-            <h3 class="price__title">VISA/GREEN CARD</h3>
-            <p class="price__desc">Фото на визу</p>
-            <div class="price__value">от 700 ₸</div>
-          </div>
+        <div class="footer-right">
+            <span data-i18n="footerCopy">© 2026 Kodak. Все права защищены.</span>
         </div>
-        <p class="note animate-fade-in">Цены ориентировочные — уточняйте по WhatsApp. При большом объёме — скидки.</p>
-      </div>
-    </section>
+    </footer>
 
-    <!-- Gallery -->
-    <section id="gallery" class="section section--reveal">
-      <div class="container">
-        <h2 class="section__title animate-slide-up">Галерея работ</h2>
-        <div class="grid gallery__grid">
-          <figure class="gallery__item animate-zoom-in">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1000&q=80" alt="Студийный портрет" />
-          </figure>
-          <figure class="gallery__item animate-zoom-in" style="animation-delay: 0.1s">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1531384441138-2736e62e0916?auto=format&fit=crop&w=1000&q=80" alt="Реставрация старых снимков" />
-          </figure>
-          <figure class="gallery__item animate-zoom-in" style="animation-delay: 0.2s">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80" alt="Печать фотографий высокого качества" />
-          </figure>
-          <figure class="gallery__item animate-zoom-in" style="animation-delay: 0.3s">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&w=1000&q=80" alt="Печать крупных форматов" />
-          </figure>
-          <figure class="gallery__item animate-zoom-in" style="animation-delay: 0.4s">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1520974698377-1bfe203eb7b5?auto=format&fit=crop&w=1000&q=80" alt="Семейная съёмка" />
-          </figure>
-          <figure class="gallery__item animate-zoom-in" style="animation-delay: 0.5s">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1511936609330-02ac7f445303?auto=format&fit=crop&w=1000&q=80" alt="Документ‑фото по стандарту" />
-          </figure>
-          <figure class="gallery__item animate-zoom-in" style="animation-delay: 0.6s">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=80" alt="Ретро камера и плёнка" />
-          </figure>
-          <figure class="gallery__item animate-zoom-in" style="animation-delay: 0.7s">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1000&q=80" alt="Портрет в студии" />
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section section--reveal">
-      <div class="container contact__wrap">
-        <div class="contact__info animate-slide-left">
-          <h2 class="section__title">Контакты</h2>
-          <ul class="contact__list">
-            <li><i class="fas fa-map-marker-alt"></i> <strong>Адрес:</strong> г. Усть‑Каменогорск, Кабанбай батыра 99</li>
-            <li><i class="fas fa-clock"></i> <strong>График работы:</strong> ежедневно, без выходных и обеда, 8:30–18:30, по выходным уточнять по телефону.</li>
-            <li><i class="fas fa-phone"></i> <strong>Телефон:</strong> <a href="tel:+77769699993">+7 776 969 9993</a></li>
-            <li><i class="fab fa-whatsapp"></i> <strong>WhatsApp:</strong> <a class="wa" href="#" data-wa="Здравствуйте! Хочу уточнить услуги и цены.">Написать</a></li>
-          </ul>
-        </div>
-        <div class="contact__map animate-slide-right" role="figure" aria-label="Карта расположения">
-          <iframe
-            title="Кабанбай батыра 99 — карта"
-            src="https://www.google.com/maps?q=%D0%9A%D0%B0%D0%B1%D0%B0%D0%BD%D0%B1%D0%B0%D0%B9%20%D0%B1%D0%B0%D1%82%D1%8B%D1%80%D0%B0%2099,%20%D0%A3%D1%81%D1%82%D1%8C-%D0%9A%D0%B0%D0%BC%D0%B5%D0%BD%D0%BE%D0%B3%D0%BE%D1%80%D1%81%D0%BA&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer" role="contentinfo">
-    <div class="container footer__inner">
-      <div class="footer__brand">
-        <span class="logo__mark">K</span><span class="logo__text">KODAK</span>
-        <p class="footer__tagline">Фотографии, которые живут</p>
-      </div>
-      <p class="footer__text">© KODAK Фотосалон, г. Усть‑Каменогорск. Кабанбай батыра 99. Ежедневно 8:30–18:30. Тел.: +7 776 969 9993.</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
